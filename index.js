@@ -3,16 +3,16 @@ const app = express();
 const path = require("path");
 const hbs = require("hbs");
 
-require("../database/conn")
+require("./database/conn")
 const userdata = require("./database/userdata")
 //setting path
-const staticPath = path.join(__dirname,"../public");
-const viewPath = path.join(__dirname,"../templates/views");
-const partialsPath = path.join(__dirname,"../templates/partials");
+const staticPath = path.join(__dirname,"./public");
+const viewPath = path.join(__dirname,"./templates/views");
+const partialsPath = path.join(__dirname,"./templates/partials");
 //middleware
-app.use("/css",express.static(path.join(__dirname,"../node_modules/bootstrap/dist/css")));
-app.use("/js",express.static(path.join(__dirname,"../node_modules/bootstrap/dist/js")));
-app.use("/jq",express.static(path.join(__dirname,"../node_modules/jquery/dist")));
+app.use("/css",express.static(path.join(__dirname,"./node_modules/bootstrap/dist/css")));
+app.use("/js",express.static(path.join(__dirname,"./node_modules/bootstrap/dist/js")));
+app.use("/jq",express.static(path.join(__dirname,"./node_modules/jquery/dist")));
 
 app.use(express.static(staticPath))
 app.set("view engine" , "hbs");
