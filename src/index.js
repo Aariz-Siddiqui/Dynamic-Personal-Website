@@ -4,7 +4,7 @@ const path = require("path");
 const hbs = require("hbs");
 
 require("../database/conn")
-const userdata = require("../database/userdata")
+const userdata = require("./database/userdata")
 //setting path
 const staticPath = path.join(__dirname,"../public");
 const viewPath = path.join(__dirname,"../templates/views");
