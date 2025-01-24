@@ -10,40 +10,60 @@
 </head>
 <body>
 {{>navbar}}
-{{!-- hero section --}}
+
+<!-- Hero Section -->
 <div class="container-fluid mt-5">
     <div class="row">
-      <div class="col-md-10 col-12 mx-auto"> 
-        <div class="row">
-            <div class="col-md-6 col-12 hero-text oder-md-0 order-1 d-flex justify-content-center align-items-start flex-column">
-            <h1> I WILL HELP YOU TO</h1>
-            <h1> GROW YOUR BUSINESS </h1>
-            <p>I am a <span class="bold-style">Professional Developer</span></p>
-            <button class="btn-style btn-primary">Read More</button>
+        <div class="col-md-10 col-12 mx-auto">
+            <div class="row">
+                <!-- Left side -->
+                <div class="col-md-6 col-12 hero-text order-md-0 order-1 d-flex justify-content-center align-items-start flex-column">
+                    <h1> Custom websites at</h1>
+                    <h1> Minimum Prices !!!! </h1>
+                    <p>Boost your Business with our highly responsive <span class="bold-style"> Web Applications.</span></p>
+                    <button class="btn-style btn-primary" id="readMoreBtn">Read More</button>
+                    <div id="expandableContent" class="expandable-content" style="display: none; margin-top: 10px;">
+                        <p>
+                            We specialize in creating web-based applications, offering end-to-end solutions for designing, developing, and deploying scalable, user-friendly applications tailored to meet specific business needs. We focus on modern technologies, responsive designs, and seamless user experiences to empower businesses with innovative digital tools.
+                        </p>
+                    </div>
+                </div>
+                <!-- Right side -->
+                <div class="col-md-6 col-12 hero-text order-md-1 order-0">
+                    <figure>
+                        <img src="images/growth.svg" alt="herosection_image">
+                    </figure>
+                </div>
             </div>
-            {{!-- right side --}}
-            <div class="col-md-6 col-12 hero-text oder-md-1 order-0">
-            <figure>
-                <img src="images/growth.svg" alt="herosection_image">
-                </figure>
-            </div>            
-        </div> 
+        </div>
     </div>
 </div>
-{{!-- hero section ends --}}
 
-{{!-- about us start --}}
+<!-- JavaScript Section -->
+<script>
+    // Ensure the DOM is fully loaded before running the script
+    document.addEventListener('DOMContentLoaded', function () {
+        const readMoreBtn = document.getElementById('readMoreBtn');
+        const expandableContent = document.getElementById('expandableContent');
+        
+        readMoreBtn.addEventListener('click', function () {
+            if (expandableContent.style.display === 'none' || expandableContent.style.display === '') {
+                expandableContent.style.display = 'block';
+                this.textContent = 'Read Less';
+            } else {
+                expandableContent.style.display = 'none';
+                this.textContent = 'Read More';
+            }
+        });
+    });
+</script>
+
+{{!-- Other Sections --}}
 {{>about}}
-{{!-- about us end --}}
-{{!-- services start --}}
 {{>services}}
-{{!-- services end --}} 
-{{!-- maps start --}}
 {{>maps}}
-{{!-- maps end --}} 
-{{!-- maps start --}}
 {{>contact}}
-{{!-- maps end --}} 
+
 <script src="../jq/jquery.js" type="text/javascript"></script>    
 <script src="../js/bootstrap.js" type="text/javascript"></script> 
 </body>
