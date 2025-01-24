@@ -1,21 +1,45 @@
 <div class="container-fluid mt-5 about-style" id="aboutid">
     <div class="row">
-      <div class="col-md-10 col-12 mx-auto"> 
-        <h1 class="text-center main-heading">About Us</h1>
-        <p class="text-center sub-heading">Grow Your Business With Me</p>
-        <div class="row">
-         <div class="col-md-6 col-12 hero-text ">
-            <figure>
-                <img src="images/about.svg" alt="herosection_image">
-                </figure>
-            </div>   
+        <div class="col-md-10 col-12 mx-auto">
+            <h1 class="text-center main-heading">About Us</h1>
+            <p class="text-center sub-heading">Boost Your Business with our highly responsive web applications</p>
+            <div class="row">
+                <!-- Left Side -->
+                <div class="col-md-6 col-12 hero-text">
+                    <figure>
+                        <img src="images/about.svg" alt="herosection_image">
+                    </figure>
+                </div>
 
-            {{!-- right side --}}
-            <div class="col-md-6 col-12 hero-text d-flex justify-content-center align-items-start flex-column">
-            <h1> I am a PROFESSIONAL DEVELOPER</h1>
-            <p>Hi my name is Aariz Siddiqui , I am a MERN STACK Developer. </p>
-            <button class="btn-style btn-primary">Read More</button>
+                <!-- Right Side -->
+                <div class="col-md-6 col-12 hero-text d-flex justify-content-center align-items-start flex-column">
+                    <h1> 24x7 Tech Support Service</h1>
+                    <p>Hi, my name is Aariz Siddiqui. I am a MERN STACK Developer.</p>
+                    <button class="btn-style btn-primary" id="aboutReadMoreBtn">Read More</button>
+                    <div id="aboutExpandableContent" class="expandable-content" style="display: none; margin-top: 10px;">
+                        <p>
+                            With extensive experience in MERN stack development, I specialize in creating dynamic and scalable web applications that cater to the unique needs of businesses. My expertise lies in delivering high-quality, responsive designs and innovative digital solutions.
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div> 
+        </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const aboutReadMoreBtn = document.getElementById('aboutReadMoreBtn');
+        const aboutExpandableContent = document.getElementById('aboutExpandableContent');
+        
+        aboutReadMoreBtn.addEventListener('click', function () {
+            if (aboutExpandableContent.style.display === 'none' || aboutExpandableContent.style.display === '') {
+                aboutExpandableContent.style.display = 'block';
+                this.textContent = 'Read Less';
+            } else {
+                aboutExpandableContent.style.display = 'none';
+                this.textContent = 'Read More';
+            }
+        });
+    });
+</script>
